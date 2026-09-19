@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - RublinMart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="/rublinmart/pages/index.html" class="logo">
+                <i class="fas fa-shopping-bag"></i> Rublin<span>Mart</span>
+            </a>
+            <ul id="nav-links" class="nav-links"></ul>
+        </div>
+    </header>
+
+    <main class="container auth-wrapper">
+        <div class="auth-card" style="max-width:500px;">
+            <h2>Create an Account</h2>
+            <p class="auth-subtitle">Join RublinMart as a Buyer or Seller</p>
+
+            <div id="auth-error" class="alert alert-error" style="display:none;"></div>
+
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Select Your Account Type</label>
+                    <div class="role-selector">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="BUYER" checked>
+                            <i class="fas fa-shopping-cart"></i> Buyer
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="SELLER">
+                            <i class="fas fa-store"></i> Seller
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-name">Full Name / Store Name</label>
+                    <input type="text" id="reg-name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password (min. 6 characters)</label>
+                    <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirm Password</label>
+                    <input type="password" id="reg-confirm-password" class="form-control" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem; font-size:1.05rem;">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Already have an account? <a href="/rublinmart/pages/login.html">Login here</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2026 RublinMart E-Commerce Platform. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+</html>

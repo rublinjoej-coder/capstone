@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - RublinMart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="/rublinmart/pages/index.html" class="logo">
+                <i class="fas fa-shopping-bag"></i> Rublin<span>Mart</span>
+            </a>
+            <ul id="nav-links" class="nav-links"></ul>
+        </div>
+    </header>
+
+    <main class="container auth-wrapper">
+        <div class="auth-card">
+            <h2>Welcome Back</h2>
+            <p class="auth-subtitle">Log in to your RublinMart account</p>
+
+            <div id="auth-error" class="alert alert-error" style="display:none;"></div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="buyer1@rublinmart.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem; font-size:1.05rem;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Don't have an account? <a href="/rublinmart/pages/register.html">Register here</a>
+            </div>
+
+            <!-- Demo Credentials Quick Helper -->
+            <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); font-size:0.85rem; color:var(--text-muted);">
+                <strong>Demo Accounts (Password: Password@123):</strong>
+                <ul style="margin-top:0.5rem; padding-left:1.2rem;">
+                    <li>Admin: <code>admin@rublinmart.com</code></li>
+                    <li>Seller: <code>seller1@rublinmart.com</code></li>
+                    <li>Buyer: <code>buyer1@rublinmart.com</code></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2026 RublinMart E-Commerce Platform. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+</html>

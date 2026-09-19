@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RublinMart - Multi-Seller E-Commerce Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header Navbar -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="/rublinmart/pages/index.html" class="logo">
+                <i class="fas fa-shopping-bag"></i> Rublin<span>Mart</span>
+            </a>
+            <ul id="nav-links" class="nav-links">
+                <!-- Dynamically populated by auth.js -->
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-banner">
+            <h1>Discover Quality Products from Top Sellers</h1>
+            <p>Shop electronics, fashion, home essentials, and more from verified multi-seller stores on RublinMart.</p>
+            <div style="display:flex; justify-content:center; gap:1rem;">
+                <a href="/rublinmart/pages/products.html" class="btn btn-primary" style="font-size:1.1rem; padding:0.75rem 2rem;">
+                    <i class="fas fa-store"></i> Explore Marketplace
+                </a>
+                <a href="/rublinmart/pages/register.html" class="btn btn-outline" style="border-color:white; color:white; font-size:1.1rem; padding:0.75rem 2rem;">
+                    Become a Seller
+                </a>
+            </div>
+        </section>
+
+        <!-- Search & Filter Section -->
+        <section class="catalog-header">
+            <h2 style="color:var(--secondary);"><i class="fas fa-fire" style="color:var(--accent);"></i> Featured Products</h2>
+            <div class="search-filter-box">
+                <input type="text" id="search-input" class="search-input" placeholder="Search products..." onkeyup="if(event.key==='Enter') loadProducts()">
+                <select id="category-filter" class="category-select" onchange="loadProducts()">
+                    <option value="all">All Categories</option>
+                </select>
+                <button onclick="loadProducts()" class="btn btn-primary"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section id="product-grid" class="product-grid">
+            <!-- Dynamically populated by products.js -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color:white; margin-bottom:1rem; display:inline-block;">Rublin<span>Mart</span></a>
+                <p>Your premium multi-seller e-commerce platform offering top quality products, fast shipping, and trusted seller ratings.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/rublinmart/pages/products.html">All Products</a></li>
+                    <li><a href="/rublinmart/pages/login.html">Login</a></li>
+                    <li><a href="/rublinmart/pages/register.html">Register as Buyer/Seller</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Security & Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 RublinMart E-Commerce Platform. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+</html>

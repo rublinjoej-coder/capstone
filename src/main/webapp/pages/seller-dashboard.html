@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Studio - RublinMart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="/rublinmart/pages/index.html" class="logo">
+                <i class="fas fa-shopping-bag"></i> Rublin<span>Mart</span>
+            </a>
+            <ul id="nav-links" class="nav-links"></ul>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top:2rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+            <div>
+                <h1 style="color:var(--secondary);"><i class="fas fa-store"></i> Seller Management Studio</h1>
+                <p style="color:var(--text-muted);">Manage your product inventory and fulfill customer orders</p>
+            </div>
+            <button onclick="openAddProductModal()" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add New Product</button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">My Active Products</div>
+                <div id="stat-total-products" class="stat-value">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Incoming Customer Orders</div>
+                <div id="stat-total-orders" class="stat-value">0</div>
+            </div>
+        </div>
+
+        <!-- Products Table -->
+        <div class="table-card" style="margin-bottom:2.5rem;">
+            <div class="table-header">
+                <h3>My Product Listings</h3>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock Qty</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="seller-products-body">
+                    <!-- Populated by seller.js -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Incoming Orders Table -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3>Incoming Customer Orders</h3>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Order Ref</th>
+                        <th>Buyer Info</th>
+                        <th>Ordered Items</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        <th>Update Status</th>
+                    </tr>
+                </thead>
+                <tbody id="seller-orders-body">
+                    <!-- Populated by seller.js -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal for Add/Edit Product -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="product-modal-title">Add New Product</h3>
+                <button onclick="closeProductModal()" class="modal-close">&times;</button>
+            </div>
+            <form id="product-form" onsubmit="handleSaveProduct(event)">
+                <div class="form-group">
+                    <label for="prod-name">Product Name</label>
+                    <input type="text" id="prod-name" class="form-control" placeholder="e.g. Ultra Slim Laptop 15" required>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
+                    <div class="form-group">
+                        <label for="prod-category">Category</label>
+                        <select id="prod-category" class="form-control" required>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Home & Office">Home & Office</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Books">Books</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prod-price">Price ($)</label>
+                        <input type="number" id="prod-price" class="form-control" step="0.01" min="0.01" placeholder="199.99" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prod-stock">Stock Quantity</label>
+                        <input type="number" id="prod-stock" class="form-control" min="0" placeholder="10" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="prod-image">Image URL</label>
+                    <input type="url" id="prod-image" class="form-control" placeholder="https://images.unsplash.com/..." required>
+                </div>
+                <div class="form-group">
+                    <label for="prod-desc">Detailed Description</label>
+                    <textarea id="prod-desc" class="form-control" rows="3" placeholder="Provide product specifications..." required></textarea>
+                </div>
+                <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:1.5rem;">
+                    <button type="button" onclick="closeProductModal()" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2026 RublinMart E-Commerce Platform. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/seller.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+</html>
