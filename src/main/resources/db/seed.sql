@@ -18,7 +18,7 @@ MERGE INTO products (id, seller_id, name, description, price, stock_qty, categor
 (4, 2, 'Ultra HD 4K Monitor 27"', 'Crisp color accuracy, 144Hz refresh rate, HDR support for gaming and design.', 349.99, 10, 'Electronics', 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500'),
 (5, 3, 'Classic Leather Jacket', '100% genuine lambskin leather jacket with premium stitching and inner lining.', 189.99, 12, 'Fashion', 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80'),
 (6, 3, 'Urban Running Sneakers', 'Lightweight breathable sneakers designed for comfort and maximum endurance.', 89.99, 40, 'Fashion', 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500'),
-(7, 3, 'Ergonomic Desk Chair', 'Adjustable lumbar support, breathable mesh back, and smooth-rolling casters.', 220.00, 8, 'Home & Office', 'https://images.unsplash.com/photo-1580481072645-022f9a6d83d0?w=500'),
+(7, 3, 'Ergonomic Desk Chair', 'Adjustable lumbar support, breathable mesh back, and smooth-rolling casters.', 220.00, 8, 'Home & Office', 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=500'),
 (8, 3, 'Stainless Steel Thermal Flask 1L', 'Keeps drinks ice cold for 24h or steaming hot for 12h. Eco-friendly design.', 29.99, 50, 'Home & Office', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80');
 
 MERGE INTO orders (id, buyer_id, status, total_amount) KEY(id) VALUES

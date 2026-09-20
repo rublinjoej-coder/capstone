@@ -52,4 +52,31 @@ public class DatabaseContextListenerTest {
             }
         }
     }
+
+    @Test
+    public void testDatabaseContextPreservesRegisteredUsersOnReinitialize() throws Exception {
+        DatabaseContextListener listener = new DatabaseContextListener();
+        listener.contextInitialized(null);
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(
+                     "INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, ?)")) {
+            ps.setString(1, "Registered User");
+            ps.setString(2, "registered@example.com");
+            ps.setString(3, "hashed-password");
+            ps.setString(4, "BUYER");
+            ps.executeUpdate();
+        }
+
+        DBConnection.close();
+        listener.contextInitialized(null);
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement("SELECT name FROM users WHERE email = ?")) {
+            ps.setString(1, "registered@example.com");
+            ResultSet rs = ps.executeQuery();
+            assertTrue(rs.next());
+            assertEquals("Registered User", rs.getString("name"));
+        }
+    }
 }

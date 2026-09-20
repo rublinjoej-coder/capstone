@@ -27,21 +27,12 @@ public class DatabaseContextListener implements ServletContextListener {
         logger.info("Initializing RublinMart Web Application Context & Database...");
         try {
             DBConnection.init();
-            resetDatabase();
             executeSqlScript("db/schema.sql");
             executeSqlScript("db/seed.sql");
             logger.info("Database schema and seed scripts executed successfully.");
         } catch (Exception e) {
             logger.error("Error initializing database context", e);
             throw new RuntimeException("Database initialization failed", e);
-        }
-    }
-
-    private void resetDatabase() throws Exception {
-        try (Connection conn = DBConnection.getConnection();
-             Statement stmt = conn.createStatement()) {
-            stmt.execute("DROP ALL OBJECTS DELETE FILES");
-            logger.info("Existing H2 database objects removed before bootstrap.");
         }
     }
 
