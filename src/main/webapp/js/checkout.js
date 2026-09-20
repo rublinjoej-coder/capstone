@@ -19,7 +19,7 @@ async function loadCheckoutPage() {
             summaryContainer.innerHTML = cart.items.map(item => `
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border);">
                     <div style="display:flex; gap:1rem; align-items:center;">
-                        <img src="${item.imageUrl}" style="width:50px; height:50px; object-fit:cover; border-radius:6px;" onerror="this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500'">
+                        <img src="${item.imageUrl}" style="width:50px; height:50px; object-fit:cover; border-radius:6px;" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500'">
                         <div>
                             <div style="font-weight:600; color:var(--secondary);">${item.productName}</div>
                             <div style="font-size:0.85rem; color:var(--text-muted);">Qty: ${item.quantity} × $${parseFloat(item.productPrice).toFixed(2)}</div>
@@ -148,7 +148,7 @@ async function loadBuyerOrdersPage() {
                 const badgeClass = `badge-${order.status.toLowerCase()}`;
                 const itemsListHtml = order.items.map(i => `
                     <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.3rem;">
-                        <img src="${i.productImage}" style="width:30px; height:30px; object-fit:cover; border-radius:4px;" onerror="this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500'">
+                        <img src="${i.productImage}" style="width:30px; height:30px; object-fit:cover; border-radius:4px;" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500'">
                         <span>${i.productName} (x${i.quantity})</span>
                         <a href="/rublinmart/pages/product-details.html?id=${i.productId}#review-section" style="font-size:0.75rem; margin-left:auto; color:var(--primary); font-weight:600;">Rate & Review</a>
                     </div>

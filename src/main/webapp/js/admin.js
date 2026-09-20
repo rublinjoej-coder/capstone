@@ -40,7 +40,7 @@ async function loadAdminDashboard() {
                 <tr>
                     <td>
                         <div style="display:flex; align-items:center; gap:0.75rem;">
-                            <img src="${p.imageUrl}" style="width:35px; height:35px; object-fit:cover; border-radius:4px;" onerror="this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500'">
+                            <img src="${p.imageUrl}" style="width:35px; height:35px; object-fit:cover; border-radius:4px;" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500'">
                             <strong>${p.name}</strong>
                         </div>
                     </td>

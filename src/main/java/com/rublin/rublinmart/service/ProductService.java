@@ -31,7 +31,7 @@ public class ProductService {
         ValidationUtil.validateRequired(category, "Category");
 
         if (imageUrl == null || imageUrl.trim().isEmpty()) {
-            imageUrl = "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500";
+            imageUrl = "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500";
         }
 
         Product product = new Product(null, sellerId, name.trim(), description.trim(), price, stockQty, category.trim(), imageUrl.trim(), null);

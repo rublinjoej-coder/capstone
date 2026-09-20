@@ -68,7 +68,7 @@ async function loadCartPage() {
                 <tr>
                     <td>
                         <div style="display:flex; align-items:center; gap:1rem;">
-                            <img src="${item.imageUrl}" style="width:60px; height:60px; object-fit:cover; border-radius:6px;" onerror="this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500'">
+                            <img src="${item.imageUrl}" style="width:60px; height:60px; object-fit:cover; border-radius:6px;" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500'">
                             <div>
                                 <a href="/rublinmart/pages/product-details.html?id=${item.productId}" style="font-weight:600; color:var(--secondary);">${item.productName}</a>
                                 <div style="font-size:0.8rem; color:var(--text-muted);">${item.category}</div>

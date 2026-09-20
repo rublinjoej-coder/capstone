@@ -62,7 +62,7 @@ function renderProductGrid(products, container) {
         return `
         <div class="product-card">
             <div class="product-img-wrapper">
-                <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500'">
+                <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500'">
                 <span class="product-category-tag">${p.category}</span>
             </div>
             <div class="product-info">
@@ -112,7 +112,7 @@ async function loadProductDetails() {
             detailContainer.innerHTML = `
                 <div class="product-detail-container">
                     <div>
-                        <img src="${p.imageUrl}" alt="${p.name}" class="product-detail-img" onerror="this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500'">
+                        <img src="${p.imageUrl}" alt="${p.name}" class="product-detail-img" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500'">
                     </div>
                     <div>
                         <span class="badge badge-confirmed">${p.category}</span>
