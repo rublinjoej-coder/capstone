@@ -205,7 +205,14 @@ mvn clean package
 ```
 This produces `target/rublinmart.war`.
 
-### 4. Deploying to Apache Tomcat 9
+### 4. Running with Maven
+This project uses Java Servlets and Tomcat, not Spring Boot. Start the configured embedded Tomcat plugin with:
+```bash
+mvn tomcat7:run
+```
+The application is available at `http://localhost:8080/rublinmart/pages/index.html`.
+
+### 5. Deploying to Apache Tomcat 9
 1. Copy `target/rublinmart.war` to Tomcat's `webapps/` folder.
 2. Start Apache Tomcat using `bin/startup.bat` (Windows) or `bin/startup.sh` (Linux/macOS).
 3. Access the web application at:
