@@ -34,3 +34,10 @@ MERGE INTO reviews (id, product_id, user_id, rating, comment) KEY(id) VALUES
 (1, 1, 4, 5, 'Exceeded my expectations! Fast boot times and great build quality.'),
 (2, 2, 4, 4, 'Noise cancellation is excellent. Slightly snug fit but overall great sound.'),
 (3, 6, 5, 5, 'Super comfortable for everyday runs and walking.');
+
+-- MERGE preserves explicit seed IDs but does not always advance H2 identity sequences.
+ALTER TABLE users ALTER COLUMN id RESTART WITH 7;
+ALTER TABLE products ALTER COLUMN id RESTART WITH 9;
+ALTER TABLE orders ALTER COLUMN id RESTART WITH 3;
+ALTER TABLE order_items ALTER COLUMN id RESTART WITH 4;
+ALTER TABLE reviews ALTER COLUMN id RESTART WITH 4;
