@@ -8,9 +8,9 @@ RUN mvn -B clean package -DskipTests
 
 FROM tomcat:9.0-jdk17-temurin
 
-RUN rm -rf /usr/local/tomcat/webapps/ROOT /usr/local/tomcat/webapps/ROOT.war
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY --from=build /app/target/rublinmart.war /usr/local/tomcat/webapps/rublinmart.war
+COPY --from=build /app/target/rublinmart.war /usr/local/tomcat/webapps/ROOT.war
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
